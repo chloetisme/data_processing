@@ -36,10 +36,13 @@ BL_DI = np.array(((results[4])[1:17]), dtype=float)
 BL_PL = np.array(((results[5])[1:13]), dtype=float)
 BL_PH = np.array(((results[6])[1:21]), dtype=float)
 
+print (BL_PH)
+print (BL_PH.mean())
+
 #let's get to t-testing https://www.youtube.com/watch?v=CIbJSX-biu0
 #two sample T-test
 
-stats.ttest_ind(a=BL_DI, b=BL_PL, equal_var=False)
+t, alpha = stats.ttest_ind(BL_DI, BL_PL, equal_var=False)
 
-
-#not getting a result, could be that I don't have commas between my values?
+print(t)
+print(alpha)
